@@ -14,7 +14,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-    origin: "https://client-yj95.onrender.com/",
+    origin: "https://client-yj95.onrender.com",
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
 }))
