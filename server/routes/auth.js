@@ -10,7 +10,7 @@ router.get("/login/success", (req, res) => {
 });
 
 router.get("/login/failed", (req, res) => {
-  res.status(401).json({ success: true, message: "failure" })
+  res.status(401).json({ success: false, message: "failure" })
 })
 
 router.get('/logout', (req, res, next) => {
@@ -35,11 +35,11 @@ router.get(
 )
 
 router.get(
-  '/github/callback',
-  passport.authenticate('github', {
-    successRedirect: 'http://localhost:5173',
-    failureRedirect: '/destinations'
-  })
-)
+  "/github/callback",
+  passport.authenticate("github", {
+    successRedirect: "https://client-yj95.onrender.com",
+    failureRedirect: "https://client-yj95.onrender.com/destinations",
+  }),
+);
 
 export default router
