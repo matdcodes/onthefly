@@ -13,7 +13,7 @@ import Login from './pages/Login.jsx'
 import Avatar from './components/Avatar.jsx'
 
 const App = () => {
-  const API_URL = "http://localhost:3001";
+  const API_URL = import.meta.env.PROD ? "{https://server-twwc.onrender.com}" : "/api";
   const [user, setUser] = useState('')
   const [trips, setTrips] = useState([])
   const [destinations, setDestinations] = useState([])
