@@ -11,6 +11,7 @@ import { GitHub } from './config/auth.js'
 import authRoutes from './routes/auth.js'
 
 const app = express()
+app.set('trust proxy', 1)
 
 app.use(express.json())
 app.use(cors({
@@ -22,7 +23,11 @@ app.use(cors({
 app.use(session({
     secret: 'codepath',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        sameSite: 'none',
+        secure: true
+    }
 }))
 
 app.use(passport.initialize())
